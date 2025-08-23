@@ -1,37 +1,34 @@
 import { Link } from "react-router";
 import { BackgroundLayout } from "@/shared/layouts";
-import { FormField } from "./formField";
+import { FormField } from "@/shared/ui";
 import { GradientButton, Button, Divider } from "@/shared/ui";
 import { Github, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 
 export function LoginPage() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-  event.preventDefault();
+    event.preventDefault();
 
-  const form = event.currentTarget;
-  const data = new FormData(form);
+    const form = event.currentTarget;
+    const data = new FormData(form);
 
-  const values = Object.fromEntries(data.entries());
+    const values = Object.fromEntries(data.entries());
 
-  toast("Submission data", {
-    description: JSON.stringify(values, null, 2),
-    action: {
-      label: "Undo",
-      onClick: () => console.log("Undo"),
-    },
-  });
+    toast("Submission data", {
+      description: JSON.stringify(values, null, 2),
+      action: {
+        label: "Undo",
+        onClick: () => console.log("Undo"),
+      },
+    });
 
-  console.log("Form submitted:", values);
-};
-
+    console.log("Form submitted:", values);
+  };
 
   return (
     <BackgroundLayout>
       <div className="flex flex-col items-center justify-center w-full h-screen">
-        <div
-          className="flex flex-col items-center justify-center w-5/10 h-8/10 bg-accent-foreground/20 backdrop-blur-xs rounded-2xl border-border"
-        >
+        <div className="flex flex-col items-center justify-center w-5/10 h-8/10 bg-accent-foreground/20 backdrop-blur-xs rounded-2xl border-border">
           <form
             onSubmit={handleSubmit}
             className="flex flex-col items-center justify-center w-full h-full gap-2 space-y-2"
