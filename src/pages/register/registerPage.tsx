@@ -1,7 +1,8 @@
-import { BackgroundLayout } from "@/shared/layouts";
-import { GradientButton, Button, FormField } from "@/shared/ui";
 import { Link } from "react-router";
 import { toast } from "sonner";
+
+import { BackgroundLayout } from "@/shared/layouts";
+import { Button, FormField } from "@/shared/ui";
 
 export function RegisterPage() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -19,8 +20,6 @@ export function RegisterPage() {
         onClick: () => console.log("Undo"),
       },
     });
-
-    console.log("Form submitted:", values);
   };
 
   return (
